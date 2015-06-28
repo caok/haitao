@@ -1,0 +1,24 @@
+common: &common
+  VIGLINK_KEY: '8e9fb2df735c8418e498352744dd9bad'
+  VIGLINK_SECRET: '805289802b349d8df213fc7df47ddfadace32095'
+
+developdb: &developdb
+  DATABASE: 'haitao'
+  DATABASE_HOST: 'localhost'
+  DATABASE_PORT: '5432'
+  DATABASE_USERNAME: 'clark'
+  DATABASE_PASSWORD: ''
+
+development:
+  <<: *common
+  <<: *developdb
+test:
+  <<: *common 
+  <<: *developdb
+production:
+  <<: *common 
+  DATABASE: ''
+  DATABASE_HOST: ''
+  DATABASE_PORT: ''
+  DATABASE_USERNAME: ''
+  DATABASE_PASSWORD: ''
