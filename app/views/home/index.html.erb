@@ -1,2 +1,12 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div id="main">
+  <div class="ui page grid">
+    <%= form_tag(convert_path, method: :post, class: 'field', id: 'convert', remote: true) do %>
+      <div class="ui huge input">
+        <%= text_field_tag :url, nil, placeholder: 'http://www.amazon.com/gp/product/B002BWPDE8' %>
+      </div>
+      <%= submit_tag 'Convert', class: 'ui huge submit button primary' %>
+    <% end %>
+  </div>
+  <div id='convert-result'>
+  </div>
+</div>

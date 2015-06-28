@@ -11,6 +11,10 @@ ActiveAdmin.register Blog do
     actions
   end
 
+  filter :title
+  filter :tags
+  filter :updated_at
+
   show do
     attributes_table do
       row :title

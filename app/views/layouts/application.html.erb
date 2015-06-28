@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Haitao</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Haitao</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="wrap">
+      <div id="notices">
+        <%= display_notice_and_alert %>
+      </div>
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
 
-<%= yield %>
-
-</body>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= yield :script %>
+  </body>
 </html>
